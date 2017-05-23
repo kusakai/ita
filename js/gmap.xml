@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<markers>
+
+<marker>
+	<name>エッサンス</name>
+	<lat>39.71738510000001</lat>
+	<lng>140.13451959999998</lng>
+	<icon>ico1</icon>
+	<data><![CDATA[
+	
+	<div>
+	<div style="padding:6px;">
+	<p style="margin:0px; color:#333;"><span style="font-weight:bold;">エッサンス</span></p>
+	</div>
+	</div>
+	]]></data>
+</marker>
+
+
+</markers>

@@ -1,0 +1,30 @@
+/*
+@include transition(0.3s);
+@include transform-origin(0%, 50%);
+@include border-radius(5px);
+@include box-shadow(0px 0px 3px #ccc);
+@include animation(animationSample 1.2s ease 0.15s);
+*/
+
+
+@charset "UTF-8";
+$type: common phone screen;
+$sp:  "only screen and (max-width:599px)";
+$tb: "only screen and (min-width:600px) and (max-width:959px)";
+$pc:  "only screen and (min-width:960px)";
+
+@import "compass";
+@import "mixin";
+@import "font";
+@import "animation";
+@import "default";
+@import "layout";
+
+@media #{$sp} {
+}
+@media #{$tb} {
+}
+@media #{$pc} {
+	
+}
+

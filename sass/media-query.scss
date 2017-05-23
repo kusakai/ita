@@ -1,0 +1,16 @@
+@mixin mq-pc {
+    @media screen and (min-width:641px) {
+        @content;
+    }
+}
+@mixin mq-sp {
+    @media screen and (min-width:0px) and (max-width: 640px) {
+        @content;
+    }
+}
+
+/*
+@import url("default.css");
+@import url("style_sp.css") screen and (min-width:0px) and (max-width: 640px);
+@import url("style.css") screen and (min-width:641px);
+*/

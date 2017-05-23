@@ -1,0 +1,36 @@
+/*
+@include transition(0.5s);
+@include animation(animationSample 1.2s ease 0.15s);
+*/
+
+
+@include keyframes(amine1){
+    0% {
+        opacity:1;
+		@include scale(1,1)
+    }
+	80%{
+		opacity:1;
+		@include scale(1.1,1.1)
+	}
+    100% {
+        opacity:1;
+		@include scale(1,1)
+    }
+}
+
+@include keyframes(amine2){
+    0% {
+		@include transform( rotate(0deg) scale(1,1))	
+    }
+	50% {
+		@include transform( rotate(180deg) scale(0.7,0.7))
+    }
+
+	80%{
+		@include transform( scale(1.05,1.05))
+	}
+    100% {
+		@include transform( rotate(360deg) scale(1,1))
+    }
+}
