@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lora|Merriweather');
 @import url('https://fonts.googleapis.com/earlyaccess/sawarabimincho.css');
 
+
 $font-min:"ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
 $font-go:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 
@@ -18,5 +19,8 @@ font-family: 'Merriweather', serif;
 font-family: 'Merriweather', serif;
 */
 
+@mixin font1(){
+font-family: 'Droid Serif', serif;
+}
 
 

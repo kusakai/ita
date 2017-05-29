@@ -12,12 +12,7 @@
 }
 
 
-@mixin font1(){
-font-family: 'Lora', serif;
-}
-@mixin font2(){
-font-family: "Sawarabi Mincho";
-}
+
 
 @mixin animation($animation-name) {
   -webkit-animation: $animation-name;

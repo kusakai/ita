@@ -1,3 +1,51 @@
+
+TweenMax.set($(".article-list .box"), {perspective:800});
+TweenMax.set($(".article-list figure .front"), {"backface-visibility":"hidden","transform": "translateZ(-1px),rotateY(0deg)","transform-origin":"50% 50%",force3D:true});
+TweenMax.set($(".article-list figure .back"), {"backface-visibility":"hidden","transform": "rotateY(180deg)","transform-origin":"50% 50%",force3D:true});
+TweenMax.set($(".article-list figure"), {"transformOrigin":"50% 50% 0%", "transformStyle":"preserve-3d"});
+$(function(){
+	
+	
+$(".article-list a").hover(
+  function() {
+	  TweenMax.to($(this).find("figure"), 1, { "transform": "rotateY(180deg)", repeat: 0, ease: Power3.easeInOut,force3D:true });
+  }, function() {
+	  TweenMax.to($(this).find("figure"), 1, { "transform": "rotateY(0deg)", repeat: 0, ease: Power3.easeInOut,force3D:true });
+  }
+);
+	
+	
+	
+	
+TweenMax.to("#quote" , 1 , {
+  top : "0px" , // CSSのプロパティ(+=とかも使えます)
+  delay : 0.5 , // 実行までの待ち時間です
+　ease : "Linear" , // イージングです。後述しますがTweenMax独自のイージングもあります。
+  onComplete : function(){} , // 処理完了後に呼ばれる関数を指定できます。
+  onStart  : function() {} , // 処理開始前に呼ばれる関数を指定できます。
+  onUpdate : function() {} // 処理実行中に呼ばれる関数を指定できます。動作しつつ
+});
+	
+	//TweenMax.to($("#quote"), 1, {"transform": "rotateY(180deg)",yoyo:true, repeat:0});
+	
+})
+
+$(function(){
+	$(window).on('load', function() {
+        console.log('load');
+    });
+})
+
+
+$(function(){
+	for(var i=0; i<$(".bg").length; i++){
+		var bg = $($(".bg")[i]).attr("data-bg");
+		var bgUrl = 'url('+bg+')';
+		$($(".bg")[i]).css('background-image',bgUrl);
+	}
+	
+})
+
 var _ua = (function(u){
 	
   return {
@@ -49,73 +97,6 @@ var _br = (function(a,b){
 		  return false;
 		}
 })(window.navigator.userAgent.toLowerCase(),window.navigator.appVersion.toLowerCase())
-
-
-$(window).load(function(){
-	if(!_ua.Mobile){
-		var sa = new scrollAnime($(".sac"),"animeAction",100);
-		var sa2 = new scrollAnime($(".dress-list2 a"),"animeAction2",100);
-		var sa3 = new scrollAnime($("#instafeed li"),"animeAction2",100);
-		var sa4 = new scrollAnime($(".bland li"),"animeAction2",100);
-		var sa5 = new scrollAnime($(".tomeanime"),"animeAction",100);
-		var sa6 = new scrollAnime($(".thumImg ul li"),"animeAction2",100);
-		var sa7 = new scrollAnime($(".weddingCo h2"),"animeAction2",100);
-		var sa8 = new scrollAnime($(".weddingCo p"),"animeAction",100);
-		var sa9 = new scrollAnime($(".tomesodeCo h2"),"animeAction",100);
-		var sa10 = new scrollAnime($(".tomesodeCo ul li"),"animeAction",100);
-		
-
-	}
-})
-
-var scrollAnime = function(a,b,c){
-	
-	if(_br != "ie9" || _br != "ie8"){		
-		init();
-	}
-
-	function init(){
-		
-		a.css("opacity",0);
-		
-		$(window).scroll(function (){
-			 a.each(function(){
-				 var pos = $(this).offset().top;
-				 var scroll = $(window).scrollTop();
-				 var windowHeight = $(window).height();
-				 if (scroll > pos - windowHeight + Number(c)){
-					  $(this).css("opacity",1)
-					 $(this).addClass(b)
-				 };
-				 
-			})
-		})
-	}
-}
-
-var scrollAnime = function(a,b,c){
-	
-	init();
-	
-	function init(){
-		
-		a.css("opacity",0);
-		
-		$(window).scroll(function (){
-			 a.each(function(){
-				 var pos = $(this).offset().top;
-				 var scroll = $(window).scrollTop();
-				 var windowHeight = $(window).height();
-				 if (scroll > pos - windowHeight + Number(c)){
-					  $(this).css("opacity",1)
-					 $(this).addClass(b)
-				 };
-				 
-			})
-		})
-	}
-
-}
 
 
 
@@ -182,15 +163,6 @@ function getRequest(){
 }
 
 
-$(window).load(function(){
-	
-	var height = $(".mainCo").height() +  $(".headerCo").height() + 200;
-	$(".backCo").height(height)
-	
-	$(".backCo").prepend("<div id='backdotto'></div>")
-	$("#backdotto").height(height)
-})
-
 
 
 
@@ -223,7 +195,7 @@ $(function(){
 		}
 	}
 	
-	$(window).load(function(){
+	$(window).on(function(){
 		var ps = new pageScroll(1500,"easeOutCubic");
 		ps.init();
 	})
